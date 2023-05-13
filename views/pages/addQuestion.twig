@@ -1,0 +1,26 @@
+{% extends "/base.twig" %}
+
+{% block main %}
+	<main>
+		<form action="/" method='post'>
+
+            <div>
+                <label for="label">Label de la question</label>
+                <input type="text" id="label" name="label">
+            </div>
+			<div>
+                <label for="type">Type de question</label>
+                <select name="type" id="type">
+                    <option value="text">Texte</option>
+                    <option value="number">number</option>
+                    <option value="radio">radio </option>
+                    <option value="checkbox">checkbox</option>
+                </select>
+            </div>
+            <div>
+            
+            </div>
+
+		</form>
+	</main>
+{% endblock %}

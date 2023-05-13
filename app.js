@@ -1,9 +1,14 @@
 const express = require("express")
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const questionRouter = require("./router/questionsRouter");
 require('dotenv').config()
 
+
 const app = express()
-app.use(express.static('assets'))
+
+
+app.use(express.static('assets'));
+app.use(questionRouter);
 
 try {
     app.listen(process.env.PORT)

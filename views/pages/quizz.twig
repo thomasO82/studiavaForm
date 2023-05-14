@@ -14,14 +14,14 @@
 							{% for choice in question.choices %}
 								<div class="choice">
 									<p>{{choice}}</p>
-									<input type="{{question.type}}" name="{{question.id}}">
+									<input type="{{question.type}}" name="{{question.columnName}}" value='{{choice}}'>
 								</div>
 							{% endfor %}
 						</div>
 
 
 					{% else %}
-						<input type="{{question.type}}">
+						<input type="{{question.type}}" name="{{questkion.columnName}}">
 					{% endif %}
 
 					{% if loop.index != questions|length  %}

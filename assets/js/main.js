@@ -1,9 +1,13 @@
 const boutonsSupprimer = document.querySelectorAll('.btn-supprimer');
 const buttonAddChoice = document.querySelector('.btn-add');
 
-buttonAddChoice.addEventListener('click', ()=>{
- addChoiceInput(document.querySelector('#q-container')) 
-})
+if (buttonAddChoice) {
+  buttonAddChoice.addEventListener('click', ()=>{
+    addChoiceInput(document.querySelector('#q-container')) 
+   })
+}
+
+
 
 // Ajouter un écouteur d'événements à chaque bouton de suppression
 boutonsSupprimer.forEach(bouton => {

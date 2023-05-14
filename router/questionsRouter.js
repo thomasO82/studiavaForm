@@ -59,4 +59,19 @@ questionRouter.post('/addquestion', async (req, res) => {
     }
 })
 
+questionRouter.get('/quizz', async (req, res) => {
+    try {
+        let questions = await questionModel.find()
+        res.render('pages/quizz.twig', {
+            questions: questions
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
+})
+
+
+
 module.exports = questionRouter;

@@ -142,7 +142,44 @@ a button:hover{
 }
 
 #titlequestions{
-   
     margin: 2rem auto;
     width: 60%;
+    font-size: larger;
+    font-weight: 400;
+}
+
+.labelquestion{
+    font-size: large;
+    font-weight: 400;
+}
+
+.labelquestion p{
+display: flex;
+justify-content: space-between;
+
+}
+
+.align{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}
+
+#quizzContainer button{
+margin: 2rem;
+}
+
+.choice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.choices{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
 }

@@ -1,25 +1,36 @@
 {% extends "../base.twig" %}
 
 {% block main %}
+	<div id="titlequestions">
+		<h2>Quizz</h2>
+	</div>
 	<form id="quizzContainer" action="/addreply" method="post">
 		{% for question in questions %}
 			<div id="question{{ loop.index }}" {% if loop.index != 1 %} style="display: none" {% endif %}>
-				<label for="">{{question.label}}</label>
-				{% if question.type == "radio" or question.type == "checkbox" %}
-					{% for choice in question.choices %}
-						<p>{{choice}}</p>
-						<input type="{{question.type}}" name="{{question.id}}">
-					{% endfor %}
+				<label class="labelquestion" for="">{{question.label}}</label>
+				<div class="align">
+					{% if question.type == "radio" or question.type == "checkbox" %}
+						<div class="choices">
+							{% for choice in question.choices %}
+								<div class="choice">
+									<p>{{choice}}</p>
+									<input type="{{question.type}}" name="{{question.id}}">
+								</div>
+							{% endfor %}
+						</div>
 
-				{% else %}
-					<input type="{{question.type}}">
-				{% endif %}
 
-				{% if loop.index != questions|length  %}
-					<button onclick="next()" type="button">Suivant</button>
-				{% else %}
-					<button>Submit</button>
-				{% endif %}
+					{% else %}
+						<input type="{{question.type}}">
+					{% endif %}
+
+					{% if loop.index != questions|length  %}
+						<button onclick="next()" type="button">Suivant</button>
+					{% else %}
+						<button>Submit</button>
+					{% endif %}
+				</div>
+
 			</div>
 		{% endfor %}
 

@@ -1,0 +1,23 @@
+{% extends "/base.twig" %}
+
+{% block main %}
+<main>
+<h1> Les questions</h1>
+<div>
+
+{% for question in questions %}
+
+    <p>{{question.label }}</p>
+    <a href="deletequestion/{{question.id}}"><button type="submit" value={{question._id}}>supprimer</button></a>
+    <a href="getupdatequestion/{{question.id}}"><button type="submit" value={{question._id}}>Modifier</button></a>
+{% endfor %}
+
+</div>
+
+</main>
+
+
+{% endblock %}
+
+{% block script %}
+{% endblock %}

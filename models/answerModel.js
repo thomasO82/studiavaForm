@@ -3,11 +3,10 @@ const aswerSchema = new mongoose.Schema({
     userId: {
         type: Number
     },
-    questionId:{
-        type: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'questions'
-        }
+    answers: {
+        type: [
+          
+        ]
     }
 });
 const answerModel = mongoose.model('answers', answerSchema);

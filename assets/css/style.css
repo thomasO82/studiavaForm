@@ -40,16 +40,18 @@ nav ul {
 
 nav li {
     margin-right: 10px;
+    font-weight: bold;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #605d5d;
     padding: 5px;
+    transition: all 0.5s ease-in;
 }
 
 nav a:hover {
-    color: #666;
+    color: #164fb2;
 }
 
 
@@ -59,6 +61,7 @@ form{
     margin: auto;
     width: 60%;
     border-radius: 15px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 form button{
@@ -91,3 +94,55 @@ form > div, form #additionalForm > div{
     flex-direction: column;
 }
 
+a button{
+    padding: 8px;
+    background-color:#164fb2;
+    margin: auto;
+    color: white;
+    border: none;
+    width: max-content;
+    border: #164fb2 solid 1px;
+    border-radius: 8px;
+    transition: all 0.5s ease-in;
+}
+
+a button:hover{
+    background-color: white;
+    color: #164fb2;
+    border: solid #164fb2 1px;
+    cursor: pointer;
+}
+
+.displayquestion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: white;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 60%;
+    border-radius: 15px;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+#delete{
+    background-color: white;
+    border: solid red 1px;
+    color: red;
+    transition: all 0.5s ease-in;
+
+}
+
+#delete:hover{
+   background-color: red;
+   color: white;
+   cursor: pointer;
+
+}
+
+#titlequestions{
+   
+    margin: 2rem auto;
+    width: 60%;
+}

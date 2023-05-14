@@ -48,6 +48,23 @@ questionRouter.get('/getupdatequestion/:id', async (req, res) => {
     }
 })
 
+questionRouter.post('/updatequestion/:id', async (req, res) => {
+    try {
+        let question = await questionModel.findById(req.params.id)
+        if(req.body.type != question.type && !req.body.minSelections && !req.body.maxSelections && !req.body.choices){
+            req.body.minSelections = ""
+            req.body.maxSelections = ""
+            req.body.choices = []
+        }
+        await questionModel.updateOne({_id : req.params.id}, req.body)
+        res.redirect('/displayquestion')
+
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
+})
+
 questionRouter.post('/addquestion', async (req, res) => {
     try {
         let question = new questionModel(req.body)

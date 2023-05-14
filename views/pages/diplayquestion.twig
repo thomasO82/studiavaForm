@@ -2,14 +2,19 @@
 
 {% block main %}
 <main>
-<h1> Les questions</h1>
+<div id="titlequestions" ><h1 > Questions</h1></div>
+
 <div>
 
 {% for question in questions %}
-
-    <p>{{question.label }}</p>
-    <a href="deletequestion/{{question.id}}"><button type="submit" value={{question._id}}>supprimer</button></a>
+<div  class="displayquestion">
+ <p>{{question.label }}</p>
+ <div>  
     <a href="getupdatequestion/{{question.id}}"><button type="submit" value={{question._id}}>Modifier</button></a>
+    <a href="deletequestion/{{question.id}}"><button id="delete" type="submit" value={{question._id}}>Supprimer</button></a></div>
+  
+</div>
+   
 {% endfor %}
 
 </div>

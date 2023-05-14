@@ -4,6 +4,9 @@ const questionSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Label is required']
     },
+    columnName:{
+        type:String
+    },
     type: {
         type: String,
         required: [true, 'Type is required']

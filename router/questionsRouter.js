@@ -72,6 +72,17 @@ questionRouter.get('/quizz', async (req, res) => {
     }
 })
 
+questionRouter.post('/addreply', async (req, res) => {
+    try {
+    console.log(req.body);
+       res.send()
+
+    } catch (error) {
+        console.log(error);
+        res.send(error)
+    }
+})
+
 
 
 module.exports = questionRouter;

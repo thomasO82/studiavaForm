@@ -1,5 +1,93 @@
 body {
-    height: 100vh;
+    font-family: Helvetica, "Segoe UI", Verdana, sans-serif;
+    margin: 0;
     background: rgb(22, 79, 178);
     background: linear-gradient(90deg, rgba(22, 79, 178, 0.08399856524641103) 0%, rgba(242, 85, 91, 0.09240192659094892) 100%);
 }
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    color: #164fb2;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+}
+
+nav a:hover {
+    color: #666;
+}
+
+
+form{
+    padding: 15px;
+    background-color: white;
+    margin: auto;
+    width: 60%;
+    border-radius: 15px;
+}
+
+form button{
+    padding: 8px;
+    background-color:#164fb2;
+    margin: auto;
+    color: white;
+    border: none;
+    width: max-content;
+    border-radius: 8px;
+}
+
+.container-submit{
+    margin: 40px;
+    text-align: center;
+}
+
+.choice-container *{
+    margin: 5px;
+}
+
+
+form label, form input, form select{
+    padding: 5px;
+}
+
+form > div, form #additionalForm > div{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+}
+

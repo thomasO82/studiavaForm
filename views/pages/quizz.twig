@@ -8,11 +8,11 @@
 				{% if question.type == "radio" or question.type == "checkbox" %}
 					{% for choice in question.choices %}
 						<p>{{choice}}</p>
-						<input type="{{question.type}}" name="{{question.id}}">
+						<input type="{{question.type}}" name="{{columnName}}">
 					{% endfor %}
 
 				{% else %}
-					<input type="{{question.type}}">
+					<input type="{{question.type}}" name="{{columnName}}">
 				{% endif %}
 
 				{% if loop.index != questions|length  %}

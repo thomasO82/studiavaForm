@@ -2,25 +2,32 @@
 
 {% block main %}
 	<main>
-		<form action="/" method='post'>
-
-            <div>
-                <label for="label">Label de la question</label>
-                <input type="text" id="label" name="label">
-            </div>
+		<form action="/addquestion" method='post'>
 			<div>
-                <label for="type">Type de question</label>
-                <select name="type" id="type">
-                    <option value="text">Texte</option>
-                    <option value="number">number</option>
-                    <option value="radio">radio </option>
-                    <option value="checkbox">checkbox</option>
-                </select>
+				<label for="label">Label de la question</label>
+				<input type="text" id="label" name="label">
+			</div>
+			<div>
+				<label for="type">Type de question</label>
+				<select onchange="createForm(this)" name="type" id="type" value="">
+					<option value="">Selectionner une option</option>
+					<option value="text">Texte</option>
+					<option value="number">number</option>
+					<option value="radio">radio</option>
+					<option value="checkbox">checkbox</option>
+				</select>
+			</div>
+			<div id="additionalForm">
+                <div>
+                    <label for="">Entrer la valeur de l'option</label>
+                    <input type="text" name="choice">
+                </div>
             </div>
-            <div>
-            
-            </div>
-
+            <button>submit</button>
 		</form>
 	</main>
+{% endblock %}
+
+{% block script %}
+	<script src="/js/main.js"></script>
 {% endblock %}

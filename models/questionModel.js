@@ -8,21 +8,22 @@ const questionSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Type is required']
     },
-    choices: {
-        type: [{
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "choices"
-            }]
+    dataName: {
+        type: String,
     },
-    minChoice: {
+    choices: {
+        type: []
+    },
+    minSelections: {
         type: Number
     },
-    maxChoice: {
-        type: Number 
+    maxSelections: {
+        type: Number
     },
     order: {
-        type : Number
+        type: Number
     }
+
 })
-const questionModel = mongoose.model('questions',questionSchema);
+const questionModel = mongoose.model('questions', questionSchema);
 module.exports = questionModel;

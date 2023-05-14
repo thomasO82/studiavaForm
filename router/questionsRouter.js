@@ -26,7 +26,7 @@ questionRouter.get('/displayquestion', async (req, res) => {
 
 questionRouter.get('/deletequestion/:id', async (req, res) => {
     try {
-        let question = await questionModel.deleteOne({_id : req.params.id})
+        await questionModel.deleteOne({_id : req.params.id})
         res.redirect('/displayquestion')
 
     } catch (error) {

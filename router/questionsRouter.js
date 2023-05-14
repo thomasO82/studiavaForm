@@ -92,7 +92,7 @@ questionRouter.get('/quizz', async (req, res) => {
 questionRouter.post('/addreply', async (req, res) => {
     try {
     console.log(req.body);
-       res.send()
+       res.send(req.body)
 
     } catch (error) {
         console.log(error);

@@ -2,22 +2,41 @@
 
 {% block main %}
 	<main>
-		<form action="/addquestion" method='post'>
+		<form {% if question %}action="/updatequestion/{{question.id}}"{% else %} action="/addquestion" {% endif %} method='post'>
 			<div>
 				<label for="label">Label de la question</label>
-				<input type="text" id="label" name="label">
+				<input type="text" id="label" name="label" {% if question %} value="{{question.label}}" {% endif %}>
 			</div>
 			<div>
 				<label for="type">Type de question</label>
-				<select onchange="createForm(this)" name="type" id="type" value="">
+				<select onchange="createForm(this)" name="type" id="type">
 					<option value="">Selectionner une option</option>
-					<option value="text">Texte</option>
-					<option value="number">number</option>
-					<option value="radio">radio</option>
-					<option value="checkbox">checkbox</option>
+					<option value="text" {% if question.type == "text" %} selected="true" {% endif %}>Texte</option>
+					<option value="number" {% if question.type == "number" %} selected="true" {% endif %}>number</option>
+					<option value="radio" {% if question.type == "radio" %} selected="true" {% endif %}>radio</option>
+					<option value="checkbox" {% if question.type == "checkbox" %} selected="true" {% endif %}>checkbox</option>
 				</select>
 			</div>
-			<div id="additionalForm"></div>
+			<div id="additionalForm">
+			{% if question.type == "checkbox" %}
+				<label>Nombre minimal de sélections :</label>
+				<input type="number" name="minSelections" value="{{question.minSelections}}">
+				<label>Nombre maximal de sélections :</label>
+				<input type="number" name="maxSelections" value="{{question.maxSelections}}">
+			{% endif %}
+				{% if question.choices|length > 0 %}
+					<div>
+						{% for choice in question.choices %}
+							<div class="choice-container">
+								<label>Choix :</label>
+								<input type="text" name="choices" value={{choice}}>
+								<button class="btn-supprimer" type="button">Supprimer</button>
+							</div>
+						{% endfor %}
+					</div>
+				{% endif %}
+
+			</div>
 			<div class="container-submit">
 				<button>submit</button>
 			</div>

@@ -1,7 +1,22 @@
+const boutonsSupprimer = document.querySelectorAll('.btn-supprimer');
+
+// Ajouter un écouteur d'événements à chaque bouton de suppression
+boutonsSupprimer.forEach(bouton => {
+  bouton.addEventListener('click', () => {
+    const container = bouton.parentNode;
+    container.remove();
+  });
+});
+
+// window.addEventListener("load", ()=>{
+//   if(document.querySelector("#type").value == "radio" || document.querySelector("#type").value == "checkbox"){
+//     createForm(document.querySelector("#type"))
+//   }
+// })
+
 function createForm(selectElement) {
     const additionalForm = document.getElementById('additionalForm');
-    additionalForm.innerHTML = ''; // Réinitialiser le contenu du formulaire supplémentaire
-  
+    additionalForm.innerHTML = ""
     const selectedType = selectElement.value;
   
     if (selectedType === 'radio') {
@@ -73,3 +88,5 @@ function createForm(selectElement) {
   
     parentElement.appendChild(choiceContainer);
   }
+
+  
